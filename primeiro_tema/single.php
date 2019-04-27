@@ -4,18 +4,17 @@
 <section>
 
     <div class="container">
-        
+        <!-- Loop -->
         <?php if( have_posts()) : while (have_posts() ) : the_post(); ?>
 
             <article>
-                <?php if(has_post_thumbnail()) : ?> <!-- Verifica se tem imagem no post -->   
-                    <a href="<?php the_permalink(); ?>">
-                    <!-- Adicionando a Imagem -->
-                        <?php the_post_thumbnail( 'thumbnail', array('class' => 't') ); ?>
-                    </a>
-                <?php endif; ?>
 
-                <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                <h2> <?php the_title(); ?> </h2>
+
+                <?php if(has_post_thumbnail()) : ?> <!-- Verifica se tem imagem no post -->       
+                    <!-- Adicionando a Imagem -->
+                    <?php the_post_thumbnail( 'thumbnail'); ?>
+                <?php endif; ?>
 
                 <p>
                     <!-- Data da Postagem -->
@@ -25,14 +24,14 @@
                 </p>
 
                 <p>
-                <!-- Mostra o conteudo e o limite de palavras -->
-                    <?php the_excerpt( ); ?>
+                <!-- Conteudo Completo -->
+                    <?php the_content( ); ?>
                 </p>
        
                 <p>
                     <!-- COMENTARIOS  -->
                     <?php comments_number('0 comentarios', '1 comentário', '% comentários' ); ?> comentários |
-                    <a href="<?php the_permalink ?>"> Leia Mais</a>
+                    
                 </p>
 
             </article>
@@ -42,11 +41,11 @@
 
         <div class="paginacao">
             <div class="pagina_anterior">
-                <?php previous_posts_link( 'Posts Anteriores'); ?>
+                <?php previous_post_link(); ?>
             </div>
 
             <div class="pagina_proxima">
-                <?php next_posts_link( 'Próximo Posts'); ?>
+                <?php next_post_link(); ?>
             </div>
 
         </div>

@@ -5,3 +5,29 @@ Author: Rodrigo Viturino
 Description: Primeiro Tema basico
 Version: 1.0
 */
+
+/* .menu-nav ul{
+    display: flex;
+    background-color: brown;
+}
+
+.menu-nav ul li{
+    list-style: none;
+}
+
+.menu-nav ul li a {
+    padding: 0 20px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.container {
+    width: 70%;
+    float: left;
+}
+
+sidebar{
+    width: 30%;
+    float: left;
+} */
